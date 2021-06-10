@@ -1,5 +1,5 @@
 ---
-# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/master-app-update.yml
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/master-app-update-shelly.yml
 - name: update shelly-store.com repos
   hosts: local
   tasks:
