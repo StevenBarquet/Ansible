@@ -1,0 +1,15 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/master-branch.com/Master/commitMaster.yml
+- name: master commit
+  hosts: local
+  tasks:
+    - name: git add
+      shell:
+        cmd: git -C /home/botz/Documents/A_Programing/Shelly3-Master-App add .
+    - name: git commit
+      shell:
+        cmd: git -C /home/botz/Documents/A_Programing/Shelly3-Master-App commit -m "app updates from ansible"
+    - name: git push
+      shell:
+        cmd: cd /home/botz/Documents/A_Programing/Shelly3-Master-App; git push  -u origin master
+...

@@ -1,0 +1,19 @@
+--------------------------Ansible Manual----------------------
+// --- Start Config
+1. Create a an inventory file in ~/inventoryName
+2. Install ansible in workers and master
+3. Check your inventory ssh conection
+4. Configure your public and priv key in your master
+	ssh-keygen
+5. Copy public key in the worker nodes
+	ssh-copy-id "userName"@"worker ip" or ssh-copy-id "worker ip" (if same username in master and worker)
+6. test Ansible inventory file with:
+	ansible all -i AnsibleInventory --list-host
+
+// --- Verify yaml syntax:
+- ansible-playbook "file".yml --syntax-check
+
+// ---Others
+configure please tellme who you are, as botz and root
+	git config --global user.email "mlmjm123@gmail.com"
+  	git config --global user.name "Ansible root"

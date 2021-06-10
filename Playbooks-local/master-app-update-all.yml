@@ -1,0 +1,24 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/master-app-update.yml
+- name: update shelly-store.com repos
+  hosts: local
+  tasks:
+
+# Prepare main app before update repos
+- name: Run playbook commitMaster
+  import_playbook: master-branch.com/Master/commitMaster.yml
+
+- name: Run playbook backupFiles
+  import_playbook: master-branch.com/Master/backupFiles.yml
+
+# Update prod repos
+- name: Run playbook shelly-store.com masterUpdate
+  import_playbook: shelly-store.com/masterUpdate.yml
+
+- name: Run playbook copiadorasqueen.com masterUpdate
+  import_playbook: copiadorasqueen.com/masterUpdate.yml
+
+# Restore repos to continue develop
+- name: Run playbook restartplays
+  import_playbook: master-branch.com/Master/restartplays.yml
+...

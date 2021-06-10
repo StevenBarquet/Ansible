@@ -1,0 +1,49 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/copiadorasqueen.com/Master/copyToProd.yml
+- name: Copy prod files to prod repo "Master-App"
+  hosts: local
+  tasks:
+    - name: change to branch copiadorasqueen.com
+      shell:
+        cmd: cd /home/botz/Documents/A_Programing/shelly2-front-production; git checkout copiadorasqueen.com
+    
+    - name: Restore privilages
+      shell:
+        cmd: chmod ugo+wrx /home/botz/Documents/A_Programing/shelly2-front-production -Rf
+
+    - name: Copy folder -> /css
+      become: true
+      copy:
+        src: /home/botz/Documents/A_Programing/Shelly3-Master-App/dist/css
+        dest: /home/botz/Documents/A_Programing/shelly2-front-production/master
+        owner: botz
+        group: botz
+        mode: '0644'
+    
+    - name: Copy folder -> /javascript
+      become: true
+      copy:
+        src: /home/botz/Documents/A_Programing/Shelly3-Master-App/dist/javascript
+        dest: /home/botz/Documents/A_Programing/shelly2-front-production/master
+        owner: botz
+        group: botz
+        mode: '0644'
+    
+    - name: Copy folder -> /media
+      become: true
+      copy:
+        src: /home/botz/Documents/A_Programing/Shelly3-Master-App/dist/media
+        dest: /home/botz/Documents/A_Programing/shelly2-front-production/master
+        owner: botz
+        group: botz
+        mode: '0644'
+    
+    - name: Copy file with -> favicon.ico
+      ansible.builtin.copy:
+        src: /home/botz/Documents/A_Programing/Shelly3-Master-App/dist/favicon.ico
+        dest: /home/botz/Documents/A_Programing/shelly2-front-production/master/favicon.ico
+        owner: botz
+        group: botz
+        mode: '0644'
+
+...

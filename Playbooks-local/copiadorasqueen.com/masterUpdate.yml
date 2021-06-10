@@ -1,0 +1,23 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/masterFullUpdate.yml
+
+- name: update all dev and prod repos
+  hosts: local
+  tasks:
+
+- name: Run playbook restoreFiles
+  import_playbook: Master/restoreFiles.yml
+
+## Missing step: change style branch in main app
+
+- name: Run playbook compileProd
+  import_playbook: Master/compileProd.yml
+
+- name: Run playbook copyToProd
+  import_playbook: Master/copyToProd.yml
+
+  ## Missing step: Check style branch in main app
+
+- name: Run playbook pushProd
+  import_playbook: Master/pushProd.yml
+...

@@ -1,0 +1,17 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/copiadorasqueen.com/pullMaster.yml
+- name: copiadorasqueen.com pull
+  hosts: local
+  tasks:
+    - name: git change branch
+      shell:
+        cmd: cd /home/botz/Documents/A_Programing/Shelly3-Master-App; git checkout copiadorasqueen.com
+
+    - name: Restore privilages
+      shell:
+        cmd: chmod ugo+wrx /home/botz/Documents/A_Programing/Shelly3-Master-App -Rf
+    
+    - name: git pull changes
+      shell:
+        cmd: cd /home/botz/Documents/A_Programing/Shelly3-Master-App; git pull origin master
+...

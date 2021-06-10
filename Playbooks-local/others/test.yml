@@ -1,0 +1,12 @@
+---
+# Comentario
+- hosts: shellyStore
+  tasks:
+    - name: do echo
+      shell:
+        cmd: echo {{ item }}
+      with_items:
+        - cosa1
+        - cosa2
+        - cosa3
+...

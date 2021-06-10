@@ -1,0 +1,26 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/shelly-store.com/restoreJSON.yml
+- name: shelly-store.com restore files
+  hosts: local
+  tasks:
+
+    - name: Restore store-data.json master-branch
+      ansible.builtin.copy:
+        src: /home/botz/Documents/Practice/Ansible/Playbooks-local/master-branch.com/Master/Backup/store-data.json
+        dest: /home/botz/Documents/A_Programing/Shelly3-Master-App/src/javascript/others/store-data.json
+        owner: botz
+        group: botz
+        mode: '0644'
+    
+    - name: restore logo master-branch
+      ansible.builtin.copy:
+        src: /home/botz/Documents/Practice/Ansible/Playbooks-local/master-branch.com/Master/Backup/images/logoStoreL.png
+        dest: /home/botz/Documents/A_Programing/Shelly3-Master-App/src/images/prod/logoStoreL.png
+        owner: botz
+        group: botz
+        mode: '0644'
+    
+    - name: Restore privilages
+      shell:
+        cmd: chmod ugo+wrx /home/botz/Documents/A_Programing/Shelly3-Master-App -Rf
+...
