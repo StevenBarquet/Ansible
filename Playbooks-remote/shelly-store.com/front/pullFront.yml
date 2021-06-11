@@ -1,0 +1,10 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/shelly-store.com/pullMaster.yml
+- name: shelly-store.com pull
+  hosts: shellyStore
+  tasks:
+    
+    - name: git pull changes shelly-store.com
+      shell:
+        cmd: cd /home/botz/shelly2-front-production; git pull origin shelly-store.com
+...

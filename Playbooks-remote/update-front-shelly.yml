@@ -1,0 +1,11 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-remote/update-front-shelly.yml
+- name: Update remote repos
+  hosts: shellyStore
+  tasks:
+
+# Update prod apps in servers
+- name: Run playbook shelly-store.com main-front
+  import_playbook: shelly-store.com/main-front.yml
+
+...

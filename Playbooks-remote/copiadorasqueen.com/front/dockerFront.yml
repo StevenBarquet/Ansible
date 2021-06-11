@@ -1,0 +1,22 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/shelly-store.com/pullMaster.yml
+- name: copiadorasqueen.com docker stuff
+  hosts: copiadorasqueen
+  tasks:
+    
+    - name: remove container
+      shell:
+        cmd: docker container rm -f shelly-front-container
+    
+    - name: remove image
+      shell:
+        cmd: docker image rm -f shelly_front_image
+
+    - name: build new image copiadorasqueen.com
+      shell:
+        cmd: cd /home/botz/shelly2-front-production; docker build -t shelly_front_image .
+    
+    - name: mount new container
+      shell:
+        cmd: docker run --name shelly-front-container -p 443:3000 -d --env SSL_PATH=/etc/letsencrypt/live/copiadorasqueen.com --restart unless-stopped --mount type=bind,source=/etc/letsencrypt/live/copiadorasqueen.com,target=/etc/letsencrypt/live/copiadorasqueen.com --mount type=bind,source=/etc/letsencrypt/archive/copiadorasqueen.com,target=/etc/letsencrypt/archive/copiadorasqueen.com shelly_front_image
+...

@@ -11,12 +11,4 @@
     - name: Restore privilages
       shell:
         cmd: chmod ugo+wrx /home/botz/Documents/A_Programing/shelly2-front-production -Rf
-    
-    - name: git add
-      shell:
-        cmd: git -C /home/botz/Documents/A_Programing/shelly2-front-production add .
-
-    - name: git commit
-      shell:
-        cmd: git -C /home/botz/Documents/A_Programing/shelly2-front-production commit -m "app updates from ansible"
 ...

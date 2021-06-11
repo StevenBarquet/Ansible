@@ -1,0 +1,13 @@
+[all]
+127.0.0.1
+134.122.112.35
+143.198.161.97
+
+[local]
+127.0.0.1   ansible_connection=local
+
+[shellyStore]
+134.122.112.35
+
+[copiadorasqueen]
+143.198.161.97
