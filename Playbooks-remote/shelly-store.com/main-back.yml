@@ -1,0 +1,14 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-remote/shelly-store.com/main-back.yml
+
+- name: Remote > Update shelly-store.com back
+  hosts: shellyStore
+  tasks:
+
+- name: Run playbook pullBack
+  import_playbook: back/pullBack.yml
+
+- name: Run playbook dockerBack
+  import_playbook: back/dockerBack.yml
+
+...

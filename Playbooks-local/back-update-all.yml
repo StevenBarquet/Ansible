@@ -1,0 +1,11 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/back-update-all.yml
+- name: update backend repo local
+  hosts: local
+  tasks:
+
+# Prepare main app before update repos
+- name: Run playbook commitBack
+  import_playbook: back/commitBack.yml
+
+...

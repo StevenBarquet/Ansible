@@ -1,0 +1,10 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/copiadorasqueen.com/pullMaster.yml
+- name: copiadorasqueen.com pull
+  hosts: copiadorasqueen
+  tasks:
+    
+    - name: git pull changes copiadorasqueen.com
+      shell:
+        cmd: cd /home/botz/shelly-back2; git pull origin master
+...

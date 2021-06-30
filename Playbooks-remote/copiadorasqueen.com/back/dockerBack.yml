@@ -1,0 +1,22 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/copiadorasqueen.com/pullMaster.yml
+- name: copiadorasqueen.com docker stuff
+  hosts: copiadorasqueen
+  tasks:
+    
+    - name: remove container
+      shell:
+        cmd: docker container rm -f shelly-back-container
+    
+    - name: remove image
+      shell:
+        cmd: docker image rm -f shelly_back_image
+
+    - name: build new backend image copiadorasqueen.com
+      shell:
+        cmd: cd /home/botz/shelly-back2; docker build -t shelly_back_image .
+    
+    - name: mount new container
+      shell:
+        cmd: docker run --network host --name shelly-back-container --env DOMAIN=copiadorasqueen.com --env SSL_PATH=/etc/letsencrypt/live/copiadorasqueen.com -p 4000:4000 -d --restart unless-stopped --mount type=bind,source=/etc/letsencrypt/live/copiadorasqueen.com,target=/etc/letsencrypt/live/copiadorasqueen.com --mount type=bind,source=/etc/letsencrypt/archive/copiadorasqueen.com,target=/etc/letsencrypt/archive/copiadorasqueen.com shelly_back_image
+...

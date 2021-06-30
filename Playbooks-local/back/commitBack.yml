@@ -1,0 +1,15 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/back/commitBack.yml
+- name: master commit backend changes
+  hosts: local
+  tasks:
+    - name: git add
+      shell:
+        cmd: git -C /home/botz/Documents/A_Programing/shelly-back2 add .
+    - name: git commit
+      shell:
+        cmd: git -C /home/botz/Documents/A_Programing/shelly-back2 commit -m "app updates from ansible"
+    - name: git push backend
+      shell:
+        cmd: cd /home/botz/Documents/A_Programing/shelly-back2; git push -u origin master
+...

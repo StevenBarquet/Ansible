@@ -1,0 +1,14 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/main-update-master.yml
+- name: Full deployment update master frontend
+  hosts: local
+  tasks:
+
+# Update prod apps in servers
+- name: Run playbook master-app-update-all.yml
+  import_playbook: Playbooks-local/master-app-update-all.yml
+
+- name: Run playbook update-front-all.yml
+  import_playbook: Playbooks-remote/update-front-all.yml
+
+...

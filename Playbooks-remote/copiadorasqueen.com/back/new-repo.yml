@@ -1,0 +1,31 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-remote/copiadorasqueen.com/front/new-repo.yml
+- name: copiadorasqueen.com pull
+  hosts: copiadorasqueen
+  tasks:
+
+    - name: tellme who you are 1
+      shell:
+        cmd: git config --global user.email "mlmjm123@gmail.com"
+    
+    - name: tellme who you are 2
+      shell:
+        cmd: git config --global user.name "Ansible root"
+
+    
+    - name: remove old repo
+      shell:
+        cmd: cd /home/botz/; rm -r /home/botz/shelly-back2
+
+    - name: create repo folder
+      shell:
+        cmd: cd /home/botz/; mkdir shelly2-front-production
+
+    - name: git init
+      shell:
+        cmd: cd /home/botz/shelly-back2; git init
+    
+    - name: add remote origin copiadorasqueen.com
+      shell:
+        cmd: cd /home/botz/shelly-back2; git remote add origin https://github.com/StevenBarquet/shelly-back2.git
+...

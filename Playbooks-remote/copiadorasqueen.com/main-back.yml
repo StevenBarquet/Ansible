@@ -1,0 +1,14 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-remote/copiadorasqueen.com/main-back.yml
+
+- name: Remote > Update copiadorasqueen.com back
+  hosts: copiadorasqueen
+  tasks:
+
+- name: Run playbook pullBack
+  import_playbook: back/pullBack.yml
+
+- name: Run playbook dockerBack
+  import_playbook: back/dockerBack.yml
+
+...
