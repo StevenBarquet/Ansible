@@ -66,7 +66,7 @@
       "AddProductsPage": {
         "title": "Agregar productos"
       },
-      "AdminPublicHomePage": {
+      "ClientHomeAdminPage": {
         "title": "Administrador del home page"
       },
       "ProductsInfoPage": {
@@ -98,6 +98,9 @@
       },
       "CreateUsersPage": {
         "title": "Crear/Editar cuentas"
+      },
+      "EditUsersPage": {
+        "title": "Editar mi perfil"
       }
     },
     "menuRoutes": [
@@ -397,6 +400,50 @@
           "label": "Entrega a convenir programada",
           "value": "Entrega a convenir programada"
         }]
+    },
+    "home": {
+      "textColors": [
+        {
+          "label": "Negro",
+          "value": "#474747"
+        },
+        {
+          "label": "Azul",
+          "value": "#2493fa"
+        },
+        {
+          "label": "Morado",
+          "value": "#8a57e9"
+        },
+        {
+          "label": "Verde",
+          "value": "#3ab415"
+        },
+        {
+          "label": "Amarillo",
+          "value": "#ffeb39"
+        },
+        {
+          "label": "Naranja",
+          "value": "#ff9100"
+        },
+        {
+          "label": "Rosa",
+          "value": "#f4a4ff"
+        },
+        {
+          "label": "Rojo",
+          "value": "#ff4d4f"
+        },
+        {
+          "label": "Gris",
+          "value": "#8b8b8b"
+        },
+        {
+          "label": "Blanco",
+          "value": "#ffffff"
+        }
+      ]
     }
   },
   "estadosMex": [
