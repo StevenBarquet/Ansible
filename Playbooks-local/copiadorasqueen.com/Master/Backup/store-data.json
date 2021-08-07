@@ -1,13 +1,13 @@
 {
   "ownerData": {
-    "domain": "copiadorasqueen.com",
+    "domain": "shelly-store.com",
     "title": {
-      "main": "Copiadoras",
-      "sub": "queen",
-      "shortStoreName": "Copiadoras"
+      "main": "Shelly",
+      "sub": "store",
+      "shortStoreName": "Shelly"
     },
-    "phoneStr": "55 8804 9953",
-    "phoneMain": 5588049953,
+    "phoneStr": "55 3370 0670",
+    "phoneMain": 5533700670,
     "facebookUrl": "https://www.facebook.com/SHELLYstore.boot",
     "contactLink": "http://m.me/SHELLYstore.boot",
     "instagramUrl": "https://www.instagram.com/",
@@ -16,20 +16,20 @@
   "appData":{
     "responsables": [
       {
-        "label": "Sam",
-        "value": "Sam"
+        "label": "Kros",
+        "value": "Kros"
       },
       {
-        "label": "Moni",
-        "value": "Moni"
+        "label": "Vane",
+        "value": "Vane"
       },
       {
-        "label": "Santi",
-        "value": "Santi"
+        "label": "El Angel",
+        "value": "El Angel"
       },
       {
-        "label": "Stephanie",
-        "value": "Stephanie"
+        "label": "Viego",
+        "value": "Viego"
       }
     ],
     "pagesData": {
@@ -66,7 +66,7 @@
       "AddProductsPage": {
         "title": "Agregar productos"
       },
-      "AdminPublicHomePage": {
+      "ClientHomeAdminPage": {
         "title": "Administrador del home page"
       },
       "ProductsInfoPage": {
@@ -101,6 +101,9 @@
       },
       "EditUsersPage": {
         "title": "Editar mi perfil"
+      },
+      "InventoryAnaliticsPage": {
+        "title": "Analiticas: Inventario"
       }
     },
     "menuRoutes": [
@@ -199,6 +202,12 @@
         "routeName": "createUser",
         "routeLabel": "Crear/editar cuentas",
         "parentKey": "usersMenu"
+      },
+      {
+        "route": "/master/inventoryAnalitics",
+        "routeName": "inventoryAnalitics",
+        "routeLabel": "Analiticas de inventario",
+        "parentKey": "analyticsMenu"
       }
     ]
   },
@@ -210,30 +219,46 @@
           "value": null
         },
         {
-          "label": "Copiadoras",
-          "value": "Copiadoras"
+          "label": "Videojuegos",
+          "value": "Videojuegos"
         },
         {
-          "label": "Refaciones",
-          "value": "Refaciones"
+          "label": "Dulces",
+          "value": "Dulces"
         },
         {
-          "label": "Consumibles",
-          "value": "Consumibles"
+          "label": "Computo",
+          "value": "Computo"
+        },
+        {
+          "label": "Celular",
+          "value": "Celular"
+        },
+        {
+          "label": "Sublimado",
+          "value": "Sublimado"
         }
       ],
       "categorias": [
         {
-          "label": "Copiadoras",
-          "value": "Copiadoras"
+          "label": "Videojuegos",
+          "value": "Videojuegos"
         },
         {
-          "label": "Refaciones",
-          "value": "Refaciones"
+          "label": "Dulces",
+          "value": "Dulces"
         },
         {
-          "label": "Consumibles",
-          "value": "Consumibles"
+          "label": "Computo",
+          "value": "Computo"
+        },
+        {
+          "label": "Celular",
+          "value": "Celular"
+        },
+        {
+          "label": "Sublimado",
+          "value": "Sublimado"
         }
       ],
       "descuentoOptions": [
