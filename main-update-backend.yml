@@ -1,5 +1,5 @@
 ---
-# ansible-playbook /home/botz/Documents/Practice/Ansible/main-update-backend.yml
+# ansible-playbook /home/botz/Documents/Practice/Ansible/main-update-backend.yml  --ask-become-pass
 - name: Full deployment update master frontend
   hosts: local
   tasks:
