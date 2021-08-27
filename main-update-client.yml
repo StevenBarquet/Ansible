@@ -1,0 +1,14 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/main-update-client.yml --ask-become-pass
+- name: Full deployment update client frontend
+  hosts: local
+  tasks:
+
+# Update prod apps in servers
+- name: Run playbook master-app-update-all.yml
+  import_playbook: Playbooks-local/client-app-update-all.yml
+
+- name: Run playbook update-front-all.yml
+  import_playbook: Playbooks-remote/update-front-all.yml
+
+...

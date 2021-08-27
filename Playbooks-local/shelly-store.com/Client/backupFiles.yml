@@ -1,0 +1,21 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/shelly-store.com/Master/backupFiles.yml
+- name: shelly-store.com backup json
+  hosts: local
+  tasks:
+    - name: backup json
+      ansible.builtin.copy:
+        src: /home/botz/Documents/A_Programing/Shelly4-Client-App/src/javascript/others/store-data.json
+        dest: /home/botz/Documents/Practice/Ansible/Playbooks-local/shelly-store.com/Client/Backup/store-data.json
+        owner: botz
+        group: botz
+        mode: '0644'
+      
+    - name: backup logo
+      ansible.builtin.copy:
+        src: /home/botz/Documents/A_Programing/Shelly4-Client-App/src/images/logoStoreL.png
+        dest: /home/botz/Documents/Practice/Ansible/Playbooks-local/shelly-store.com/Client/Backup/images/logoStoreL.png
+        owner: botz
+        group: botz
+        mode: '0644'
+...

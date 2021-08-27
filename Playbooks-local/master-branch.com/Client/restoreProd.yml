@@ -1,0 +1,14 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/others/restartPlays.yml
+- name: Restore Prod Repo
+  hosts: local
+  tasks:
+
+    - name: change prod branch to master
+      shell:
+        cmd: cd /home/botz/Documents/A_Programing/shelly2-front-production; git checkout master
+    
+    - name: Restore privilages
+      shell:
+        cmd: chmod ugo+wrx /home/botz/Documents/A_Programing/shelly2-front-production -Rf
+...

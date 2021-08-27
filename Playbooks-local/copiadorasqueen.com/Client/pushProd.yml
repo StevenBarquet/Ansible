@@ -1,0 +1,18 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/copiadorasqueen.com/Master/pushProd.yml
+- name: copiadorasqueen.com push prod master-app
+  hosts: local
+  tasks:
+
+    - name: git add copiadorasqueen.com
+      shell:
+        cmd: git -C /home/botz/Documents/A_Programing/shelly2-front-production add .
+
+    - name: git commit copiadorasqueen.com
+      shell:
+        cmd: git -C /home/botz/Documents/A_Programing/shelly2-front-production commit -m "app updates from ansible"
+    
+    - name: git push copiadorasqueen.com
+      shell:
+        cmd: cd /home/botz/Documents/A_Programing/shelly2-front-production; git push -u origin copiadorasqueen.com
+...

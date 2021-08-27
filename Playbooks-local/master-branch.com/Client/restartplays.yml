@@ -1,0 +1,12 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/master-branch.com/Master/restartplays.yml
+- name: prepare main app to dev and ansible
+  hosts: local
+  tasks:
+
+- name: Run playbook restoreFiles
+  import_playbook: restoreFiles.yml
+
+- name: Run playbook restoreProd
+  import_playbook: restoreProd.yml
+...

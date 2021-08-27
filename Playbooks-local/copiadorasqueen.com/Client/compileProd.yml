@@ -1,0 +1,10 @@
+---
+# ansible-playbook /home/botz/Documents/Practice/Ansible/Playbooks-local/copiadorasqueen.com/Master/compileProd.yml
+- name: copiadorasqueen.com compile
+  hosts: local
+  tasks:
+    - name: run build prodction copiadorasqueen.com
+      shell:
+        cmd: cd /home/botz/Documents/A_Programing/Shelly4-Client-App; npm run build-full
+    
+...
